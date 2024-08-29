@@ -1,13 +1,13 @@
 ```
-:::██████╗██████╗ ██████╗:::::██████╗::██████╗:::
-::██╔════╝██╔══██╗██╔══██╗:::██╔═████╗██╔════╝:::
-::██║:::::██████╔╝██████╔╝:::██║██╔██║███████╗:::
-::██║:::::██╔═══╝ ██╔═══╝::::████╔╝██║██╔═══██╗::
-::╚██████╗██║:::::██║::::::::╚██████╔╝╚██████╔╝::
-:::╚═════╝╚═╝:::::╚═╝:::::::::╚═════╝::╚═════╝:::
+:::██████╗██████╗ ██████╗:::::██████╗:███████╗::
+::██╔════╝██╔══██╗██╔══██╗:::██╔═████╗╚════██║::
+::██║:::::██████╔╝██████╔╝:::██║██╔██║::::██╔╝::
+::██║:::::██╔═══╝ ██╔═══╝::::████╔╝██║:::██╔╝:::
+::╚██████╗██║:::::██║::::::::╚██████╔╝:::██║::::
+:::╚═════╝╚═╝:::::╚═╝:::::::::╚═════╝::::╚═╝::::
 ```
 
-*This module is designed to help you understand the different casts in CPP.*
+*This module is designed to help you understand Templates in CPP.*
 
  Skills | Grade |
 :------:|:-----:|
@@ -19,7 +19,6 @@
   * **[design requirements](#alguns-requisitos-de-design)**
   * **[Read me](#read-me)**
   * **[Orthodox Canonical Form](#orthodox-canonical-form)**
-  * **[Regra adicional (CPP06)](#regra-adicional-cpp06)**
 * **[Wiki](https://github.com/faleite/42cpp00/wiki/)**
 * **[Roadmap](https://faleite.github.io/cpp)**
 * **[Study resources](#study-resources)**

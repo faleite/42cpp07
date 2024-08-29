@@ -1,5 +1,5 @@
 # C++
-***(Modulo 06)***
+***(Modulo 07)***
 
 ## Index
 
@@ -7,6 +7,105 @@
 02. **[reinterpret_cast](#reinterpret_cast)**
 03. **[dynamic_cast](#dynamic_cast)**
 04. **[Resources](#resources)**
+
+*Exemplos*
+Aqui está exmplos de `functions templates` e `class templates`:
+
+```cpp
+// Function Templates
+template <class T>
+T getMax(T a, T b)
+{
+	T result;
+	result = (a > b) ? a : b;
+	return (result);
+}
+
+// Function Templates
+template <class T, class U>
+T getMin(T a, U b)
+{
+	return ((a < b) ? a : b);
+}
+
+// Class Templates
+
+/**
+ * @brief Stores two values ​​of the same type.
+ */
+template <class T>
+class myPair
+{
+	private:
+		T values[2];
+		T a, b;
+	public:
+		myPair(T first, T second)
+		{
+			values[0] = first;
+			values[1] = second;
+			a = first;
+			b = second;
+		}
+		void getData(void);
+		T getMax();
+};
+
+template <class T>
+T myPair<T>::getMax()
+{
+	T retVal;
+	retVal = a > b ? a : b;
+	return (retVal);
+}
+
+template <class T>
+void myPair<T>::getData()
+{
+	std::cout << "Data: " << values[0] 
+	<< " and " << values[1] << std::endl; 
+}
+
+int	main(void)
+{
+	// Used function templates:
+	std::cout << "functions templates" << std::endl;
+	{
+		int i = 5, j = 6, k;
+		long l = 10, m = 5, n;
+	
+		// k = getMax<int>(i, j);
+		// n = getMax<long>(l, m);
+		k = getMax(i, j);
+		n = getMax(l, m);
+	
+		std::cout << k << std::endl;
+		std::cout << n << std::endl;
+	}
+	{
+		int i, j = 3;
+		long l = 7;
+
+		// i = getMin<int, long>(j, l);
+		i = getMin(j, l);
+		std::cout << i << std::endl;
+	}
+	
+	// Used class templates:
+	std::cout << "class templates" << std::endl;
+	{
+		myPair<int> myObject(115, 36);
+		myPair<double> myFloats(3.01, 2.18);
+		
+		myObject.getData();
+		myFloats.getData();
+		std::cout << myObject.getMax() << std::endl;
+	}
+	return (0);
+}
+```
+
+# MODELO DE RASCUNHO
 
 ## static_cast
 *`static_cast` é um operador de casting que permite a conversão explícita de um tipo de dado para outro. Ele é mais seguro e controlado do que os casts tradicionais em C (como `(int)x`), pois* ***realiza verificações em tempo de compilação.***
