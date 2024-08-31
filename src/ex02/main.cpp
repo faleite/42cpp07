@@ -1,53 +1,75 @@
-#include <iostream>
-#include <Array.hpp>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: faaraujo <faaraujo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/31 14:00:39 by faaraujo          #+#    #+#             */
+/*   Updated: 2024/08/31 17:12:29 by faaraujo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#define MAX_VAL 750
-int main(int, char**)
+#include "Array.hpp"
+
+int	main(void)
 {
-    Array<int> numbers(MAX_VAL);
-    int* mirror = new int[MAX_VAL];
-    srand(time(NULL));
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        const int value = rand();
-        numbers[i] = value;
-        mirror[i] = value;
-    }
-    //SCOPE
-    {
-        Array<int> tmp = numbers;
-        Array<int> test(tmp);
-    }
+	std::cout << "\n=========== Type of integer ==============\n\n";
+	{
+		::Array<int> arrEmpty;
+		::Array<int> arrForCopy(50);
+		::Array<int> arrNumbers;
+		arrNumbers = arrForCopy;
+	
+		std::cout << "Size of Array arrEmpty: " << arrEmpty.size() << std::endl;
+		
+		try
+		{
+			std::cout << "Size of Array arrNumbers: " << arrNumbers.size() << std::endl;
+			for (size_t i = 0; i < 50; i++)
+				arrNumbers[i] = i;
+				
+			std::cout << "Getting Numbers of arrNumbers: " << std::endl;
+			for (size_t i = 0; i < 50; i++)
+				std::cout << arrNumbers[i] << " ";
+			std::cout << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << std::endl;
+		}
+		try
+		{
+			std::cout << arrNumbers[-1] << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << std::endl;
+		}
+	}
+	std::cout << "\n=========== Type of string ===============\n\n";
+	{
+		::Array<std::string> arrStrings(5);
+		std::cout << "Size of Array arrStrings: " << arrStrings.size() << std::endl;
+		try
+		{
+			arrStrings[-1] = "Empty";
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << ": (arrStrings[-1])" << std::endl;
+		}
+		arrStrings[0] = "Class";
+		arrStrings[1] = "template";
+		arrStrings[2] = "Array";
+		arrStrings[3] = "contains";
+		arrStrings[4] = "elements of type string now";
 
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        if (mirror[i] != numbers[i])
-        {
-            std::cerr << "didn't save the same value!!" << std::endl;
-            return 1;
-        }
-    }
-    try
-    {
-        numbers[-2] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    try
-    {
-        numbers[MAX_VAL] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        numbers[i] = rand();
-    }
-    delete [] mirror;//
-    return 0;
+		std::cout << "Getting elements of arrStrings: " << std::endl;
+		for (size_t i = 0; i < 5; i++)
+			std::cout << arrStrings[i] << " ";
+		std::cout << std::endl;
+	}
+	
+	return (0);
 }

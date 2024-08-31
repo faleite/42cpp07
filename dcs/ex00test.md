@@ -1,8 +1,6 @@
 # EX00 TEST
 
 ```cpp
-#include "../includes/whatever.hpp"
-
 class Awesome
 {
   public:

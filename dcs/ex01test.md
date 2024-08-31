@@ -1,8 +1,6 @@
 # EX01 TEST
 
 ```cpp
-#include "../includes/iter.hpp"
-
 class Awesome
 {
   public:
