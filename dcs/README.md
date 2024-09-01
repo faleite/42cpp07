@@ -3,53 +3,9 @@
 
 ## Index
 
-01. **[Retornando referência](#funções-retornando-uma-referência)**
-02. **[Exemplos de Codigos](#exemplos-de-codigos)**
+01. **[Exemplos de Codigos](#exemplos-de-codigos)**
+02. **[Retornando referência](#funções-retornando-uma-referência)**
 03. **[Resources](#resources)**
-
-## Funções retornando uma referência
-*Razões para Retornar uma Referência*
-
-1. **Evitar Cópias Desnecessárias:**
-  - Retornar uma referência evita a criação de uma cópia do objeto. Isso pode ser mais eficiente, especialmente para tipos grandes ou complexos.
-  - Quando você retorna uma referência, você está retornando um "apelido" para o objeto original, não uma nova instância.
-2. **Permitir Modificações no Objeto Original:**
-  - Retornar uma referência permite que o chamador modifique o objeto original. Isso pode ser útil em alguns casos onde você deseja alterar o valor do maior dos dois objetos.
-
-*Exemplo:*
-```cpp
-int x = 10;
-int y = 20;
-max(x, y) = 30; // Isso modifica 'y' para 30, pois 'y' é o maior
-```
-3. **Consistência com o Uso de Referências nos Parâmetros:**
-  - Se você está passando os parâmetros por referência, faz sentido retornar uma referência também, para manter a consistência e evitar cópias desnecessárias.
-
-*Exemplo de uso:*
-```cpp
-#include <iostream>
-
-template <typename T>
-T& max(T &a, T &b)
-{
-    return (a > b) ? a : b;
-}
-
-int main()
-{
-    int x = 10;
-    int y = 20;
-
-    std::cout << "Max: " << max(x, y) << std::endl;
-
-    // Modificando o maior valor
-    max(x, y) = 30;
-    std::cout << "x: " << x << ", y: " << y << std::endl;
-
-    return 0;
-}
-```
-[↑ Index ↑](#index)
 
 ## *Exemplos de codigos*
 
@@ -149,6 +105,50 @@ int	main(void)
 }
 ```
 
+[↑ Index ↑](#index)
+
+## Funções retornando uma referência
+*Razões para Retornar uma Referência*
+
+1. **Evitar Cópias Desnecessárias:**
+  - Retornar uma referência evita a criação de uma cópia do objeto. Isso pode ser mais eficiente, especialmente para tipos grandes ou complexos.
+  - Quando você retorna uma referência, você está retornando um "apelido" para o objeto original, não uma nova instância.
+2. **Permitir Modificações no Objeto Original:**
+  - Retornar uma referência permite que o chamador modifique o objeto original. Isso pode ser útil em alguns casos onde você deseja alterar o valor do maior dos dois objetos.
+
+*Exemplo:*
+```cpp
+int x = 10;
+int y = 20;
+max(x, y) = 30; // Isso modifica 'y' para 30, pois 'y' é o maior
+```
+3. **Consistência com o Uso de Referências nos Parâmetros:**
+  - Se você está passando os parâmetros por referência, faz sentido retornar uma referência também, para manter a consistência e evitar cópias desnecessárias.
+
+*Exemplo de uso:*
+```cpp
+#include <iostream>
+
+template <typename T>
+T& max(T &a, T &b)
+{
+    return (a > b) ? a : b;
+}
+
+int main()
+{
+    int x = 10;
+    int y = 20;
+
+    std::cout << "Max: " << max(x, y) << std::endl;
+
+    // Modificando o maior valor
+    max(x, y) = 30;
+    std::cout << "x: " << x << ", y: " << y << std::endl;
+
+    return 0;
+}
+```
 [↑ Index ↑](#index)
 
 ## Resources
