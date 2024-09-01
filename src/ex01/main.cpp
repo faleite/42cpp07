@@ -6,7 +6,7 @@
 /*   By: faaraujo <faaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 17:56:33 by faaraujo          #+#    #+#             */
-/*   Updated: 2024/08/30 20:42:45 by faaraujo         ###   ########.fr       */
+/*   Updated: 2024/09/01 15:07:13 by faaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,17 @@ int	main(void)
 	float arrFloat[] = {1.69, 3.14, 7.2};
 	std::string arrString[] = {"alpha", "beta", "omega"};
 	size_t sizeArr = 3;
-
+	
 	std::cout << "Array of Integer:" << std::endl;
-	
-	// Function Template
-	::iter(arrInt, sizeArr, printArray<int>);
+	::iter(arrInt, sizeArr, printArray<int>); // Function Template
 	std::cout << std::endl;
+	
 	std::cout << "Array of Float:" << std::endl;
-	
-	// Function Template
-	::iter(arrFloat, sizeArr, printArray<float>);
+	::iter(arrFloat, sizeArr, printArray<float>); // Function Template
 	std::cout << std::endl;
-	std::cout << "Array of Strings:" << std::endl;
 	
-	// Function Template
-	::iter(arrString, sizeArr, printArray<std::string>);
+	std::cout << "Array of Strings:" << std::endl;
+	::iter(arrString, sizeArr, printArray<std::string>); // Function Template
 	std::cout << std::endl;
 
 	return (0);

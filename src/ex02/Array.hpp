@@ -6,7 +6,7 @@
 /*   By: faaraujo <faaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 13:44:46 by faaraujo          #+#    #+#             */
-/*   Updated: 2024/08/31 16:58:40 by faaraujo         ###   ########.fr       */
+/*   Updated: 2024/09/01 14:47:39 by faaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib> // for rand();
 
 /*
 Desenvolva um modelo de classe Array que contenha elementos do tipo T e que 
@@ -55,6 +56,6 @@ class Array
 		size_t size() const;
 };
 
-#include "Array.tpp"
+// #include "Array.tpp"
 
 #endif // ARRAY_HPP

@@ -6,12 +6,14 @@
 /*   By: faaraujo <faaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 13:44:46 by faaraujo          #+#    #+#             */
-/*   Updated: 2024/08/31 16:25:42 by faaraujo         ###   ########.fr       */
+/*   Updated: 2024/09/01 14:47:33 by faaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_TPP
-# define ARRAY_TPP
+// #ifndef ARRAY_TPP
+// # define ARRAY_TPP
+
+#include "Array.hpp"
 
 template <typename T>
 Array<T>::Array(): _sizeArr(0), _array(0)
@@ -71,4 +73,4 @@ size_t Array<T>::size() const
 	return (_sizeArr);
 }
 
-#endif // ARRAY_TPP
+// #endif // ARRAY_TPP
