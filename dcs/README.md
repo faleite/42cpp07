@@ -4,8 +4,9 @@
 ## Index
 
 01. **[Exemplos de Codigos](#exemplos-de-codigos)**
-02. **[Retornando referência](#funções-retornando-uma-referência)**
-03. **[Resources](#resources)**
+01. **[Templates typename vs class](#templates-typename-vs-class)**
+03. **[Retornando referência](#funções-retornando-uma-referência)**
+04. **[Resources](#resources)**
 
 ## *Exemplos de codigos*
 
@@ -103,6 +104,26 @@ int	main(void)
 	}
 	return (0);
 }
+```
+
+[↑ Index ↑](#index)
+
+## Templates typename vs class
+- A diferença entre `template <typename T>` e `template <class T>` é puramente sintática. Ambos são equivalentes e podem ser usados de forma intercambiável para declarar templates em C++.
+
+**Detalhes:**
+
+- `template <typename T>`: Introduzido para tornar o código mais intuitivo, especialmente para novos programadores. A palavra typename sugere que T é um tipo.
+- `template <class T>`: É a forma original de declarar templates em C++. A palavra `class` não significa que `T` deve ser uma classe; pode ser qualquer tipo (classe, struct, tipo primitivo, etc.).
+
+**Quando usar:**
+- **Preferência pessoal ou convenção do projeto:** Escolha uma e seja consistente. Em muitos projetos, a escolha entre `typename` e `class` é baseada em convenções de codificação ou preferências pessoais.
+- **Legibilidade:** Alguns desenvolvedores preferem `typename` para deixar claro que `T` é um tipo, especialmente em contextos onde a palavra `class` pode ser confusa.
+
+Você, no entanto, tem que usar `class` (e não `typename`) ao declarar um parâmetro de template de template:
+```cpp
+template <template <typename> class    T> class C { }; // valid!
+template <template <typename> typename T> class C { }; // invalid!  o noez!
 ```
 
 [↑ Index ↑](#index)

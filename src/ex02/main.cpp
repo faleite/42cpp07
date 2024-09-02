@@ -6,12 +6,11 @@
 /*   By: faaraujo <faaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 14:00:39 by faaraujo          #+#    #+#             */
-/*   Updated: 2024/09/01 15:01:02 by faaraujo         ###   ########.fr       */
+/*   Updated: 2024/09/02 18:42:55 by faaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.tpp"
-
 
 /*
 Por que Funciona com Tipos Simples e Complexos?
